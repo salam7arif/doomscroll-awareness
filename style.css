@@ -52,3 +52,22 @@ button {
     background: green;
     transition: 0.5s;
 }
+
+.video-overlay {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 280px; /* Adjust size as needed */
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 9999; /* Ensures it stays on top of everything */
+    border: 3px solid #333;
+}
+
+.video-overlay iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
