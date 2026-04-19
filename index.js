@@ -28,6 +28,8 @@ function checkUsage() {
     // Progress bar (max 10 hours = 100%)
     let percentage = Math.min((hours / 10) * 100, 100);
     bar.style.width = percentage + "%";
+
+    showRandomCritic();
 }
 
 // Load saved data
@@ -39,3 +41,22 @@ window.onload = function () {
         checkUsage();
     }
 };
+
+const criticMessages = [
+    "Are you doomscrolling again?",
+    "Maybe it's time for a break!",
+    "Don't let the feed control you.",
+    "You could be doing something better!",
+    "Remember to look away sometimes.",
+    "Social media isn't everything.",
+    "How about a walk instead?",
+    "Your time is precious—use it wisely!"
+];
+
+function showRandomCritic() {
+    const criticBar = document.getElementById('criticBar');
+    if (!criticBar) return;
+    const msg = criticMessages[Math.floor(Math.random() * criticMessages.length)];
+    criticBar.textContent = msg;
+    criticBar.style.display = 'block';
+}
